@@ -1,16 +1,23 @@
 package crm;
 
 import java.util.LinkedList;
-import java.util.List;
-
-import static crm.Car.CarType.*;
 
 public class Main {
 
-    public static final Car FERRARI = new Car("Ferrari F40", SPORT);
-    public static final Car FORD = new Car("Ford Focus", REGULAR);
-    public static final Car TESLA = new Car("Tesla model 3", ELECTRICAL);
+    public static final Car FERRARI;
+    public static final Car FORD;
+    public static final Car TESLA;
 
+    static {
+        final FrequentLoyaltyPointsCalcStrategy frequentLoyaltyPointsCalcStrategy = new FrequentLoyaltyPointsCalcStrategy();
+        FERRARI = new Car("Ferrari F40", new SportCarRentPriceCalcStrategy(), frequentLoyaltyPointsCalcStrategy);
+        final LoyaltyPointsCalcStrategy regularCarLoyaltyPointsCalcStrategy = LoyaltyPointsDecorator.builder()
+            .startWith(frequentLoyaltyPointsCalcStrategy)
+            .decorate(new RegularCarLoyaltyPointsCalcStrategy())
+            .build();
+        FORD = new Car("Ford Focus", new RegularCarRentPriceCalcStrategy(), regularCarLoyaltyPointsCalcStrategy);
+        TESLA = new Car("Tesla model 3", new ElectricalCarRentPriceCalcStrategy(), frequentLoyaltyPointsCalcStrategy);
+    }
     public static void main(String[] args) {
         LinkedList<Rental> rentals = new LinkedList<>();
         rentals.add(new Rental(FERRARI, 1));
@@ -19,6 +26,6 @@ public class Main {
 
         Customer customer = new Customer("Vasiliy Pupkin", rentals);
 
-        System.out.println(customer.statement());
+        System.out.println(customer.getReceipt());
     }
 }
