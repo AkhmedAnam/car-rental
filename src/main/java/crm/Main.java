@@ -1,5 +1,12 @@
 package crm;
 
+import crm.loyalty.LoyaltyPointsCalcStrategy;
+import crm.loyalty.LoyaltyPointsDecorator;
+import crm.loyalty.impl.FrequentLoyaltyPointsCalcStrategy;
+import crm.loyalty.impl.RegularCarLoyaltyPointsCalcStrategy;
+import crm.rental.impl.ElectricalCarRentPriceCalcStrategy;
+import crm.rental.impl.RegularCarRentPriceCalcStrategy;
+import crm.rental.impl.SportCarRentPriceCalcStrategy;
 import java.util.LinkedList;
 
 public class Main {

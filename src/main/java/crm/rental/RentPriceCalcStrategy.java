@@ -1,4 +1,4 @@
-package crm;
+package crm.rental;
 
 import java.math.BigDecimal;
 

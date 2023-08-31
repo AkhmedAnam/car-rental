@@ -1,5 +1,7 @@
 package crm;
 
+import crm.receipt.ReceiptMakingStrategy;
+import crm.receipt.impl.DefaultReceiptStrategy;
 import java.util.LinkedList;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

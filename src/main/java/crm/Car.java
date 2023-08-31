@@ -1,5 +1,7 @@
 package crm;
 
+import crm.loyalty.LoyaltyPointsCalcStrategy;
+import crm.rental.RentPriceCalcStrategy;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

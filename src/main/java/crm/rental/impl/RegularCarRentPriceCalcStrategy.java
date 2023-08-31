@@ -1,5 +1,6 @@
-package crm;
+package crm.rental.impl;
 
+import crm.rental.RentPriceCalcStrategy;
 import java.math.BigDecimal;
 
 /**
@@ -7,7 +8,7 @@ import java.math.BigDecimal;
  *
  * @author a.anam
  */
-public class RegularCarRentPriceCalcStrategy implements RentPriceCalcStrategy{
+public class RegularCarRentPriceCalcStrategy implements RentPriceCalcStrategy {
 
     private static final int FACTOR = 10;
     @Override

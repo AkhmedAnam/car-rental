@@ -1,5 +1,6 @@
-package crm;
+package crm.receipt;
 
+import crm.Rental;
 import java.util.List;
 
 /**

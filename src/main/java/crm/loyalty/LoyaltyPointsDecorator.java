@@ -1,4 +1,4 @@
-package crm;
+package crm.loyalty;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +12,7 @@ import lombok.Setter;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class LoyaltyPointsDecorator implements LoyaltyPointsCalcStrategy{
+public abstract class LoyaltyPointsDecorator implements LoyaltyPointsCalcStrategy {
     @Getter
     @Setter
     private LoyaltyPointsCalcStrategy strategy;

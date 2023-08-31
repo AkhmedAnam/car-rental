@@ -1,5 +1,6 @@
-package crm;
+package crm.rental.impl;
 
+import crm.rental.RentPriceCalcStrategy;
 import java.math.BigDecimal;
 
 /**

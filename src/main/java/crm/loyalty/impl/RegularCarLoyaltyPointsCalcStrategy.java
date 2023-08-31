@@ -1,4 +1,6 @@
-package crm;
+package crm.loyalty.impl;
+
+import crm.loyalty.LoyaltyPointsDecorator;
 
 /**
  * 30.08.2023

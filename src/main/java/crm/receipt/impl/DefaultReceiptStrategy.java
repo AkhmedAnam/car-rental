@@ -1,5 +1,8 @@
-package crm;
+package crm.receipt.impl;
 
+import crm.Car;
+import crm.Rental;
+import crm.receipt.ReceiptMakingStrategy;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -9,7 +12,7 @@ import java.util.List;
  *
  * @author a.anam
  */
-public class DefaultReceiptStrategy implements ReceiptMakingStrategy{
+public class DefaultReceiptStrategy implements ReceiptMakingStrategy {
 
     @Override
     public String getReceipt(String customerName, List<Rental> rentals) {
