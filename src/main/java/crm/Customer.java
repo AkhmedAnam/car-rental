@@ -2,7 +2,7 @@ package crm;
 
 import crm.receipt.ReceiptMakingStrategy;
 import crm.receipt.impl.DefaultReceiptStrategy;
-import java.util.LinkedList;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ public class Customer {
     @Getter
     private final String name;
     @Getter
-    private final LinkedList<Rental> rentals;
+    private final List<Rental> rentals;
     @Getter
     @Setter
     private ReceiptMakingStrategy receiptMakingStrategy = new DefaultReceiptStrategy();

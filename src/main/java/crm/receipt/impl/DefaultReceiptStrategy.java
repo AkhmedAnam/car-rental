@@ -21,7 +21,7 @@ public class DefaultReceiptStrategy implements ReceiptMakingStrategy {
         final String separator = System.lineSeparator();
         final String tab = "\t";
         final StringBuilder stringBuilder = new StringBuilder("Rental Record for ");
-        stringBuilder.append(customerName).append(separator).append(separator);
+        stringBuilder.append(customerName).append(separator);
         for (Rental rental : rentals) {
             final Car car = rental.getCar();
             final int rentalPeriod = rental.getPeriod();
@@ -32,7 +32,8 @@ public class DefaultReceiptStrategy implements ReceiptMakingStrategy {
                 .append(thisAmount.setScale(2, RoundingMode.CEILING)).append(separator);
             totalAmount = totalAmount.add(thisAmount);
         }
-        stringBuilder.append("Amount price is ").append(totalAmount.setScale(2, RoundingMode.CEILING))
+        stringBuilder.append(separator).append("Amount price is ")
+            .append(totalAmount.setScale(2, RoundingMode.CEILING))
             .append("$").append(separator)
             .append("You earned ").append(totalLoyaltyPoints).append(" loyalty points");
 

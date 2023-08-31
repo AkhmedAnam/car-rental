@@ -10,6 +10,7 @@ import crm.rental.impl.ElectricalCarRentPriceCalcStrategy;
 import crm.rental.impl.RegularCarRentPriceCalcStrategy;
 import crm.rental.impl.SportCarRentPriceCalcStrategy;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
 
@@ -28,7 +29,7 @@ public class Main {
         TESLA = new Car("Tesla model 3", new ElectricalCarRentPriceCalcStrategy(), frequentLoyaltyPointsCalcStrategy);
     }
     public static void main(String[] args) {
-        LinkedList<Rental> rentals = new LinkedList<>();
+        List<Rental> rentals = new LinkedList<>();
         rentals.add(new Rental(FERRARI, 1));
         rentals.add(new Rental(FORD, 4));
         rentals.add(new Rental(TESLA, 5));
