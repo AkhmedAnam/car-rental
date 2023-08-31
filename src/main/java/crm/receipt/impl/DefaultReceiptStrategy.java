@@ -32,7 +32,7 @@ public class DefaultReceiptStrategy implements ReceiptMakingStrategy {
                 .append(thisAmount.setScale(2, RoundingMode.CEILING)).append(separator);
             totalAmount = totalAmount.add(thisAmount);
         }
-        stringBuilder.append(separator).append("Amount price is ")
+        stringBuilder.append("Amount price is ")
             .append(totalAmount.setScale(2, RoundingMode.CEILING))
             .append("$").append(separator)
             .append("You earned ").append(totalLoyaltyPoints).append(" loyalty points");
