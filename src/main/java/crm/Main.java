@@ -4,6 +4,8 @@ import crm.loyalty.LoyaltyPointsCalcStrategy;
 import crm.loyalty.LoyaltyPointsDecorator;
 import crm.loyalty.impl.FrequentLoyaltyPointsCalcStrategy;
 import crm.loyalty.impl.RegularCarLoyaltyPointsCalcStrategy;
+import crm.receipt.ReceiptPrinter;
+import crm.receipt.impl.ConsoleReceiptPrinter;
 import crm.rental.impl.ElectricalCarRentPriceCalcStrategy;
 import crm.rental.impl.RegularCarRentPriceCalcStrategy;
 import crm.rental.impl.SportCarRentPriceCalcStrategy;
@@ -33,6 +35,8 @@ public class Main {
 
         Customer customer = new Customer("Vasiliy Pupkin", rentals);
 
-        System.out.println(customer.getReceipt());
+        final String receipt = customer.getReceipt();
+        ReceiptPrinter receiptPrinter = new ConsoleReceiptPrinter();
+        receiptPrinter.print(receipt);
     }
 }
